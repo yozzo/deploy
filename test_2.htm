@@ -486,7 +486,10 @@ function onDocumentMouseDown(event) {
 //    }
     function handleVideo() {
       var url = window.URL || window.webkitURL;
-       video.src = 'videos/test_4.mp4';
+
+       video.src =  'videos/' + window.location.hash.split('#')[1] + '.mp4';
+
+       console.log(video.src);
        video.loop = true;
         video.play();
         //video.src = window.URL.createObjectURL(stream);
