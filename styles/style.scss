@@ -1,0 +1,220 @@
+@import "../fonts/stylesheet.css";
+@import "includes/variables";
+
+body {
+    background-color: gray;
+    margin: 0;
+}
+
+/* Player */
+.no-height {
+    height: 0 !important;
+}
+
+.player-container {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    color: $color-white;
+    width: 436px;
+    height: 95vh;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.player-cover {
+    height: 160px;
+    background-position: top center;
+    background-size: cover;
+    transition: height .4s;
+}
+
+
+.track-info {
+    font-family: bentonsanslight;
+    padding: $gutter $gutter $gutter 0;
+    position: absolute;
+    z-index: 2;
+    left: 42px;
+    bottom: 100px;
+    float: left;
+    width: 74%;
+}
+
+.track-name {
+    margin: 12px 0;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.track-tag,
+.track-link {
+    font-family: bentonsanslight;
+    color: $color-white;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    margin-right: -7px;
+}
+
+.track-link:hover {
+    text-decoration: none;
+}
+
+.track-link-wrapper {
+    overflow: hidden;
+    position: fixed;
+}
+
+.player-progress-container-wrapper {
+    position: relative;
+    float: left;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 42px;
+    cursor: pointer;
+}
+
+.player-progress-container {
+    position: absolute;
+    left: $gutter;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+}
+
+.player-progress-value {
+    position: absolute;
+    width: 2px;
+    top: 0;
+    left: $gutter;
+    bottom: 0;
+    background-color: $color-white;
+    z-index: 2;
+
+    &:after {
+        position: absolute;
+        bottom: -3px;
+        right: -2px;
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $color-white;
+    }
+}
+
+.player-options {
+    display: flex;
+    justify-content: space-between;
+    padding: $gutter 0 0;
+    width: 365px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 42px;
+
+}
+
+.player-buttons {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 135px;
+}
+
+.player-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #D2D7DB;
+
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    outline: 0;
+    transition: all .4s;
+
+    i {
+        font-size: 28px;
+        margin: 0 auto;
+    }
+
+    &.active {
+        color: #838C92;
+    }
+
+    &.big {
+        width: 40px;
+        height: 40px;
+        background: $color-white;
+
+        i {
+            font-size: 36px;
+        }
+    }
+
+    &.medium {
+        width: 16px;
+        height: 50px;
+
+        i {
+            font-size: 15px;
+        }
+    }
+
+    &.volume {
+        width: 40px;
+    }
+
+    &:disabled {
+        opacity: .5;
+    }
+}
+
+.fa-forward {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url($uri-next) no-repeat;
+    background-size: contain;
+}
+
+.fa-backward {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url($uri-prev) no-repeat;
+    background-size: contain;
+}
+
+.fa-play {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url($uri-play) no-repeat;
+    background-size: contain;
+}
+
+.fa-pause {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url($uri-pause) no-repeat;
+    background-size: contain;
+}
+
+.player-controls {
+    width: 104px;
+
+
+    .player-btn {
+        color: #D9D9D9;
+    }
+}
